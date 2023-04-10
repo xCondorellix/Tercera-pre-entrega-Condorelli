@@ -1,0 +1,6 @@
+    path("",inicioAppbarrio),
+    path("propietarios/", propietarios),
+    path("visitas/", visitas),
+    path("torneos/", torneos),
+
+    path("", views.inicioAppbarrio),
