@@ -8,4 +8,48 @@
 
 {% block subtitulo %}
 <h1> Unete a la familia: </h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Agregar">
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>DNI</th>
+            <th>Integrantes</th>
+            <th>Mascotas</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for asociado in asociados %}
+        <tr>
+            <td>
+                {{ asociado.id }}
+            </td>
+            <td>
+                {{ asociado.apellido }}
+            </td>        
+            <td>
+                {{ asociado.email }}
+            </td>
+            <td>
+                {{ asociado.DNI }}
+            </td>
+            <td>
+                {{ asociado.integrantes }}
+            </td>
+            <td>
+                {{ asociado.mascotas }}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}

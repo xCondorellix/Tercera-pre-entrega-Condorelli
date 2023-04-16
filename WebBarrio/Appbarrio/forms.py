@@ -21,6 +21,7 @@ class TerrenosForm(forms.Form):
     nombre = forms.CharField(max_length= 20)
     apellido = forms.CharField(max_length= 40)
     telefono = forms.CharField(max_length= 16)
+    email = forms.EmailField(max_length= 40)
     def __str__(self):
         return f"{self.nombre} pronto te contactaremos para atender tu solicitud y brindarte toda la información disponibe!"
     
