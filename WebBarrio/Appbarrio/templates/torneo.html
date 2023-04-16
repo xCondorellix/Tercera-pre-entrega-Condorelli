@@ -10,7 +10,8 @@
 <h1> Participantes: </h1>
 
 <form action="" method="post">
-    {{ form }}
+    {% csrf_token %}
+    { form.as_p }
     <input type="submit" value="Agregar">
 </form>
 
@@ -25,14 +26,14 @@
         </tr>
     </thead>
     <tbody>
-        {{% for participante in participantes %}}
+        {% for participante in participantes %}
         <tr>
             <td>
                 {{ participante.id }}
             </td>
             <td>
                 {{ participante.nombre }}
-            </td>
+            </td>        
             <td>
                 {{ participante.apellido }}
             </td>
@@ -43,9 +44,8 @@
                 {{ participante.DNI }}
             </td>
         </tr>
-        {{% endfor %}}
+        {% endfor %}
     </tbody>
 </table>
-
 {% endblock %}
 

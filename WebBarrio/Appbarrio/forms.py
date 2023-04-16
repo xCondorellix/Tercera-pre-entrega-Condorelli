@@ -12,7 +12,7 @@ class AsociadosForm(forms.Form):
 class TorneoForm(forms.Form):
     nombre = forms.CharField(max_length=20)
     apellido = forms.CharField(max_length=40)
-    email = forms.EmailField(max_length= 30)
+    email = forms.EmailField(max_length= 40)
     DNI = forms.CharField(max_length= 8)
     def __str__(self):
         return f"Ya estas insripto {self.nombre}! En breve te enviaremos toda la información sobre el torneo a tu email!"
@@ -20,8 +20,7 @@ class TorneoForm(forms.Form):
 class TerrenosForm(forms.Form):
     nombre = forms.CharField(max_length= 20)
     apellido = forms.CharField(max_length= 40)
-    telefono = forms.CharField(max_length= 12)
-    email = forms.EmailField(max_length= 30)
+    telefono = forms.CharField(max_length= 16)
     def __str__(self):
         return f"{self.nombre} pronto te contactaremos para atender tu solicitud y brindarte toda la información disponibe!"
     
