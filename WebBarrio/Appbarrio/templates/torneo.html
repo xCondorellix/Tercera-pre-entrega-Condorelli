@@ -1,0 +1,51 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1> Torneo de golf Vigente </h1>
+{% endblock %}
+
+{% block subtitulo %}
+<h1> Participantes: </h1>
+
+<form action="" method="post">
+    {{ form }}
+    <input type="submit" value="Agregar">
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>DNI</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{% for participante in participantes %}}
+        <tr>
+            <td>
+                {{ participante.id }}
+            </td>
+            <td>
+                {{ participante.nombre }}
+            </td>
+            <td>
+                {{ participante.apellido }}
+            </td>
+            <td>
+                {{ participante.email }}
+            </td>
+            <td>
+                {{ participante.DNI }}
+            </td>
+        </tr>
+        {{% endfor %}}
+    </tbody>
+</table>
+
+{% endblock %}
+

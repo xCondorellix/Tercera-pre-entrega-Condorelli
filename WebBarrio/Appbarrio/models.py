@@ -2,20 +2,28 @@ from django.db import models
 
 # Create your models here.
 
-class Propietarios(models.Model):
-    lote = models.IntegerField(max_length= 3, unique= True)
-    apellido = models.CharField(max_length= 40)
-    antiguedad = models.IntegerField(max_length= 3)
-    integrantes = models.IntegerField(max_length= 2)
-    mascotas = models.IntegerField(max_length= 3)
+class Asociados(models.Model):
+    apellido_familia= models.CharField(max_length= 40)
+    email = models.EmailField(max_length=30)
+    DNI = models.CharField(max_length = 8)
+    integrantes = models.CharField(max_length=2)
+    mascotas = models.CharField(max_length=4)
+    def __str__(self):
+        return "Ya sos parte de la familia!"
         
 class Torneo(models.Model):
     nombre = models.CharField(max_length=20)
     apellido = models.CharField(max_length=40)
-    DNI = models.IntegerField(max_length=8)
-    
+    email = models.EmailField(max_length=30)
+    DNI = models.CharField(max_length= 8)
+    def __str__(self):
+        return f"Ya estas insripto {self.nombre}! En breve te enviaremos toda la información sobre el torneo a tu email!"
 
-class Visitantes(models.Model):
-    DNI = models.IntegerField(max_length= 8)
-    Patente = models.CharField(max_length= 8)
-    lote = models.IntegerField(max_length= 3)
+class Terrenos(models.Model):
+    nombre = models.CharField(max_length= 20)
+    apellido = models.CharField(max_length= 40)
+    telefono = models.CharField(max_length= 12)
+    email = models.EmailField(max_length=30)
+    def __str__(self):
+        return f"{self.nombre} pronto te contactaremos para atender tu solicitud y brindarte toda la información disponibe!"
+    
